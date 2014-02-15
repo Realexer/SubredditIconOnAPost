@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "SubredditIconOnAPost", "..\..\..\..\..\..\Projects\My\SubredditIconOnAPost\", "{CF1927CA-318B-4ABB-8456-4D48CF79E980}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/SubredditIconOnAPost"
+		Debug.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Projects\My\SubredditIconOnAPost\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\SubredditIconOnAPost\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/SubredditIconOnAPost"
+		Release.AspNetCompiler.PhysicalPath = "..\..\..\..\..\..\Projects\My\SubredditIconOnAPost\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\SubredditIconOnAPost\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "50701"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF1927CA-318B-4ABB-8456-4D48CF79E980}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF1927CA-318B-4ABB-8456-4D48CF79E980}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
