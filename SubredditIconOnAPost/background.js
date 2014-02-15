@@ -1,5 +1,5 @@
 var something = "d(*_*)P";
-console.log(something);
+//console.log(something);
 
 chrome.runtime.onMessage.addListener(function(msg, sender, callback) {
 	

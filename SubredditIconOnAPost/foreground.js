@@ -1,11 +1,11 @@
 var something = "d(*_*)P";
-console.log(something);
+//console.log(something);
 
 var subredditsHeaders = {
 	/* 
 	subredditName: {
-		img,
-		things
+		img: "url_to_img",
+		things:[]
 	}
 	*/
 };
@@ -17,7 +17,7 @@ var siteTable = document.getElementById("siteTable");
 var thingsList = [].slice.call(siteTable.getElementsByClassName("thing"));
 insertSubredditIconsIntoList(thingsList);
 
-// compatibility with RES
+// compatibility with never ending reddit
 setInterval(function() 
 {
 	var currentThings = [].slice.call(siteTable.getElementsByClassName("thing"));
@@ -104,7 +104,6 @@ function setBackgroundImage(thing, img)
 	subredditIconImg.className = "subredditIcon";
 	thing.style.position = "relative";
 	thing.style.overflow = "hidden";
-	
 	
 	subredditIconImg.onload = function() {
 		thing.insertBefore(subredditIconImg, thing.firstChild);

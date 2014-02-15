@@ -1,20 +1,12 @@
-﻿/* TODO: check possibilities to specify particular domen and its subdomain only*/
-{
+﻿{
 	"author": "Alexey Skrypnik (realexer)",
 	
 	"manifest_version": 2,
 
-	"name": "SubredditIconOnAPost",
+	"name": "Subreddit Icon On A Post",
 	"description": "Adds subreddit icon on a post, so you can easily distinguish posts by subreddits.",
-	"version": "0.0.1",
+	"version": "1.0",
 
-	"permissions": [
-		"contextMenus",
-		"activeTab",
-		"tabs",
-		"http://*.reddit.com/*",
-		"https://*.reddit.com/*"
-	],
 
 	"icons": {
 		"16": "img/icons/icon-16.png",
