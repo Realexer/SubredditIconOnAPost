@@ -53,12 +53,30 @@ function insertSubredditIconIntoPost(thing)
 		// extra check to make sure that we don't make any redundant web request lol
 		if(thing.getElementsByClassName("subredditIcon").length != 0)
 			return;
+
+		var insertBeforElm = thing.firstChild;
+		if(thing.getElementsByClassName("rank").length != 0) 
+		{
+			var rank = thing.getElementsByClassName("rank")[0];
+			rank.classList.add("subredditIconRank");
+			insertBeforElm = rank.nextSibling;
+		}
+	
+		var hyperlinkToSubreddit = document.createElement("a");
+		hyperlinkToSubreddit.href = subredditInfo.address;
+		hyperlinkToSubreddit.title = subredditInfo.name;
+		hyperlinkToSubreddit.classList.add("hyperLinkToSubreddit");
+		hyperlinkToSubreddit.classList.add("noIcon");
+		hyperlinkToSubreddit.innerHTML = " loading icon ..";
+		
+		thing.insertBefore(hyperlinkToSubreddit, insertBeforElm);
+		
 		
 		if(subredditsHeaders[subredditInfo.name] != undefined) 
 		{
 			if(subredditsHeaders[subredditInfo.name].img) 
 			{
-				setBackgroundImage(thing, subredditsHeaders[subredditInfo.name].img);
+				setBackgroundImage(thing, subredditsHeaders[subredditInfo.name].img, subredditInfo);
 			} 
 			else 
 			{
@@ -79,7 +97,7 @@ function insertSubredditIconIntoPost(thing)
 			{
 				subredditsHeaders[subredditInfo.name].img = imgUrl;
 				subredditsHeaders[subredditInfo.name].things.forEach(function(th) {
-					setBackgroundImage(th, imgUrl, subredditInfo.name);	
+					setBackgroundImage(th, imgUrl, subredditInfo);	
 				});	
 			}
 		);
@@ -97,15 +115,22 @@ function getLinkToSubreddit(thing)
 	};
 }
 
-function setBackgroundImage(thing, img) 
+function setBackgroundImage(thing, imgUrl, subredditInfo) 
 {
-	var subredditIconImg = document.createElement("img");
-	subredditIconImg.src = img;
-	subredditIconImg.className = "subredditIcon";
-	thing.style.position = "relative";
-	thing.style.overflow = "hidden";
+	var hyperLinkToSubreddit = thing.getElementsByClassName("hyperLinkToSubreddit")[0];
+	if(!imgUrl) {
+		hyperLinkToSubreddit.innerHTML = subredditInfo.name.capitalize();
+		hyperLinkToSubreddit.classList.add("noIcon");
+	}
 	
-	subredditIconImg.onload = function() {
-		thing.insertBefore(subredditIconImg, thing.firstChild);
+	var subredditIconImg = document.createElement("img");
+	subredditIconImg.src = imgUrl;
+	subredditIconImg.className = "subredditIcon";
+	
+	subredditIconImg.onload = function() 
+	{
+		hyperLinkToSubreddit.classList.remove("noIcon");
+		hyperLinkToSubreddit.innerHTML = "";
+		hyperLinkToSubreddit.appendChild(subredditIconImg);
 	};
 }

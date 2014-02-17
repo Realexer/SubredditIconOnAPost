@@ -118,3 +118,7 @@ Array.prototype.TrimAllElements = function ()
 	this.forEach(function (el, i, a) { a[i] = el.trim(); });
 	return this;
 };
+
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}

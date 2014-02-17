@@ -1,7 +1,24 @@
 ﻿.subredditIcon 
 {
-	position: absolute;
-	opacity: 1.0;
-	width: 32px;
-	margin-top: 32px;
+	width: 50px;
+}
+
+.hyperLinkToSubreddit 
+{
+	min-height: 1px; /* so it always appears as a box*/
+	display: block;
+	width: 50px;
+	float: left;
+	margin-left: 0.5em;
+	word-wrap:break-word	
+}
+
+.noIcon {
+	padding-top: 0.5em;
+}
+
+.subredditIconRank {
+	margin: 0px !important;
+	text-align: center !important;
+
 }
