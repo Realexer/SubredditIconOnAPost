@@ -6,6 +6,7 @@ var subredditsHeaders = {
 	subredditName: {
 		img: "url_to_img",
 		things:[]
+		noImg: false
 	}
 	*/
 };
@@ -80,14 +81,19 @@ function insertSubredditIconIntoPost(thing)
 			} 
 			else 
 			{
-				subredditsHeaders[subredditInfo.name].things.push(thing);
+				if(subredditsHeaders[subredditInfo.name].noImg == true) {
+					setBackgroundImage(thing, null, subredditInfo);	
+				} else {
+					subredditsHeaders[subredditInfo.name].things.push(thing);	
+				}
 			}
 			return;
 		}
 
 		subredditsHeaders[subredditInfo.name] = {
 			img: null,
-			things: []
+			things: [],
+			noImg: false
 		};
 	
 		subredditsHeaders[subredditInfo.name].things.push(thing);
@@ -121,6 +127,8 @@ function setBackgroundImage(thing, imgUrl, subredditInfo)
 	if(!imgUrl) {
 		hyperLinkToSubreddit.innerHTML = subredditInfo.name.capitalize();
 		hyperLinkToSubreddit.classList.add("noIcon");
+
+		subredditsHeaders[subredditInfo.name].noImg = true;
 	}
 	
 	var subredditIconImg = document.createElement("img");
